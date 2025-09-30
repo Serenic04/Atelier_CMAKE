@@ -8,3 +8,11 @@ add_test(t1 src/calculator add 2 3)
 add_test(t2 src/calculator sub 3 -2)
 add_test(t3 src/calculator mul 5 5)
 add_test(t4 src/calculator div 1 5)
+
+enable_testing()
+
+add_executable(calculator main.c)
+add_subdirectory(lib)
+
+add_test(NAME test_calculator COMMAND calculator)
+
